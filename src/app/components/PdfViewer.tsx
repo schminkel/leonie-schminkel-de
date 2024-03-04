@@ -16,13 +16,19 @@ export default function PdfViewer(): React.JSX.Element {
   const fullScreenPluginInstance = fullScreenPlugin();
 
   return (
-    <Worker workerUrl="/pdfjs-dist-3-4-120/pdf.worker.js">
+    <Worker workerUrl="https://unpkg.com/pdfjs-dist@3.4.120/build/pdf.worker.min.js">
       <Viewer
         fileUrl="/gfs-buchdruck.pdf"
         plugins={[fullScreenPluginInstance]}
         renderLoader={(percentages: number) => (
-          <div style={{ width: "240px" }}>
-            <ProgressBar progress={Math.round(percentages)} />
+          <div
+            className={
+              "absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+            }
+          >
+            <div className={"w-80 md:w-96"}>
+              <ProgressBar progress={Math.round(percentages)} />
+            </div>
           </div>
         )}
         theme={{
