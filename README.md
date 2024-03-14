@@ -1,18 +1,10 @@
-# Next.js Project Template
+# A minimalist website for Leonie Schminkel
+
+Display a slide deck online, and nothing more.
 
 - Next.js
 - TailwindCSS
 - Typescript
 - ESLint
 - Prettier
-
-## Update all packages
-
-```bash
-# install npm-check-updates
-npm install -g npm-check-updates
-# check if there are any updates
-ncu
-# update all packages
-ncu --upgrade
-```
+- React-PDF-Viewer
